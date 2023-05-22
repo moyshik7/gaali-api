@@ -1,6 +1,6 @@
 entrypoint = "main.js"
 
-hidden = [".config", "package-lock.json"]
+hidden = []
 
 [interpreter]
 command = [
@@ -86,4 +86,4 @@ pattern = "**/{*.js,*.jsx,*.ts,*.tsx,*.json}"
 start = "typescript-language-server --stdio"
 
 [deployment]
-run = ["sh", "-c", "node index.js"]
+run = ["sh", "-c", "node ."]

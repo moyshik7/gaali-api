@@ -3,6 +3,11 @@
 import Database from "better-sqlite3";
 import fs from "fs"
 
+const db = new Database("./db/gaali.db");
+db.pragma('journal_mode = WAL');
+
+
+
 /*const insert = db.prepare(`CREATE TABLE IF NOT EXISTS bangla (
 	id INTEGER PRIMARY KEY AUTOINCREMENT,
    	text TEXT NOT NULL

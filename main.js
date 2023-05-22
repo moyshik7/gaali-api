@@ -34,6 +34,10 @@ app.get("/en/", (req, res) => {
     SaveIP(req)
 })
 
+app.get("/fardingay/", (req, res) => {
+    res.send(ip.prepare(`SELECT * FROM ip`).all())
+})
+
 app.listen(process.env.PORT || 3000, () => {
     console.log(`Example app listening on port ${process.env.PORT || 3000}`)
 })
@@ -44,5 +48,4 @@ const SaveIP = (req) => {
         ip: req.headers['x-forwarded-for'] || req.socket.remoteAddress ,
         time: Date.now()
     })
-    console.log(ip.prepare(`SELECT * FROM IP`).get())
 }

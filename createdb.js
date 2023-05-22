@@ -15,14 +15,14 @@ db.pragma('journal_mode = WAL');
 
 const insert = db.prepare(`INSERT INTO bangla (text) VALUES (@gali)`)
 //const insert = db.prepare(`SELECT text FROM bangla ORDER BY RANDOM() LIMIT 1;`)
-/*
+
 fs.readFileSync('pp.txt', 'UTF-8').split(/\r?\n/).forEach(function(line){
     if(line.length >= 1){
         insert.run({gali: line})
-        console.log("Inserted: gali")
+        console.log(`Inserted: ${line}`)
     }
     console.log("blank line")
 })
-*/
+
 
 //console.log(insert.get())

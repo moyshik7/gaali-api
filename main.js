@@ -19,6 +19,15 @@ app.get("/bn/", (req, res) => {
     }
     res.send(r)
 })
+app.get("/en/", (req, res) => {
+    const q = db.prepare(`SELECT text FROM english ORDER BY RANDOM() LIMIT 1;`).get();
+    const r = {
+        code: 200,
+        lang: "en/us",
+        gali: q.text
+    }
+    res.send(r)
+})
 
 app.listen(process.env.PORT || 3000, () => {
     console.log(`Example app listening on port ${process.env.PORT || 3000}`)

@@ -14,6 +14,7 @@ app.get("/bn/", (req, res) => {
     const q = db.prepare(`SELECT text FROM bangla ORDER BY RANDOM() LIMIT 1;`).get();
     const r = {
         code: 200,
+        lang: "bn/bd",
         gali: q.text
     }
     res.send(r)
